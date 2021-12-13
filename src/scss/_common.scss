@@ -1,0 +1,38 @@
+html {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body{
+  font: 16px 'Montserrat', sans-serif;
+}
+html,body, .wrapper{
+  height: 100%;
+}
+a {
+  text-decoration: none;
+  color: #333333;
+}
+h1{
+  font-size: 48px;
+  margin: 0 auto;
+}
+h3{
+  font-size: 18px;
+  margin: 0 auto;
+}
+h1, p{
+  color: #333333;
+}
+header{
+  background-image: url("../img/fone.png");
+}
+footer, header, main , {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+}
