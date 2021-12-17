@@ -1,14 +1,17 @@
 @import "common";
 @import "media";
+@import 'mixin';
+@import "crutch";
 .wrapper{
     display: flex;
     flex-direction: column;
+    min-height: 100%;
 }
 .header,
 .footer {
     flex-shrink: 0;
 }
-.container, .masters{
+.container{
     margin-right: 163px;
     margin-left: 165px;
 }
@@ -28,7 +31,7 @@
     display: inline-block;
     font-weight: bold;
 }
-.navigation ul, .tabs__navigation ul{
+.navigation ul, .tabs__navigation ul, .brands__img{
     list-style: none;
     margin: 0;
     padding: 0;
@@ -59,10 +62,13 @@
     padding-top: 11px;
 }
 .hero__content, .container__about-video,
-.benefit, .footer__container, .masters{
+.benefit, .footer__container, .masters, .works,
+.contact{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-box-pack: justify;
 }
 .hero__title{
     font-weight: 600;
@@ -107,48 +113,53 @@
 .about{
     float: left;
     width: 569px;
-        &__subtitle {
+    &__subtitle {
         font-size: 20px;
         padding-top: 32px;
         padding-bottom: 16px;
         margin: 0 auto;
         line-height: 32px;
-        }
-        &__subtitle1{
+    }
+    &__subtitle1{
         font-size: 16px;
         padding-bottom: 16px;
         line-height: 26px;
-        }
-        &__expand{
+    }
+    &__expand{
         color: #278AFF;
         font-size: 14px;
-        }
+    }
 }
 .video{
     float:right;
     width: 445px;
-        &__play{
-            padding-top: 91px;
-        }
+    &__play{
+        margin-top: 91px;
+        position: relative;
+    }
+}
+.video img:hover{
+    filter: brightness(65%);
+    background: url("./src/img/play.png");
 }
 .benefit{
     margin-top: 99px;
     text-align: center;
-        &__icon{
-            width: 350px;
-            height: 176px;
-        }
-        &__title{
-            font-size: 18px;
-            margin-top: 28px;
-            margin-bottom: 0;
-        }
-        &__subtitle{
-            font-size: 14px;
-            line-height: 22px;
-            margin-top: 12px;
-            margin-bottom: 0;
-        }
+    &__icon{
+        width: 350px;
+        height: 176px;
+    }
+    &__title{
+        font-size: 18px;
+        margin-top: 28px;
+        margin-bottom: 0;
+    }
+    &__subtitle{
+        font-size: 14px;
+        line-height: 22px;
+        margin-top: 12px;
+        margin-bottom: 0;
+    }
 }
 .footer__title{
     font-size: 12px;
@@ -254,7 +265,7 @@
         padding-bottom: 100px;
     }
 }
-.container__master{
+.section_gray{
     background-color: #F8F6F7;
 }
 .master{
@@ -281,5 +292,142 @@
     &__essay{
         font-size: 12px;
         text-transform: uppercase;
+    }
+    &__img:hover{
+        filter: brightness(65%);
+    }
+}
+.work {
+    margin-top: 100px;
+    &__button {
+        float: right;
+        margin-top: -30px;
+    }
+    &__btn-prev, &__btn-next{
+        background-color: #FFFFFF;
+        color: #00BF78;
+        font-size: 25px;
+        height: 40px;
+        width: 40px;
+        border-width: 0;
+        border-radius: 50px;
+    }
+    &__btn-prev:hover, &__btn-next:hover {
+        background: #F8F6F7;
+        cursor: pointer;
+    }
+}
+.works{
+    margin-top: 52px;
+    &__info{
+        position:relative;
+        display:inline-block;
+    }
+    &__img{
+        height: 338px;
+        width: 338px;
+        margin-right: 29px;
+    }
+    &__img:hover{
+        filter: brightness(65%);
+        transition: 1s;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}
+.brands {
+    margin-bottom: 100px;
+    margin-top: 102px;
+    &__img {
+        -webkit-box-align: center;
+        align-items: center;
+        height: auto;
+        margin: 40px 186px 0 144px;
+        max-width: 160px;
+        opacity: 0.4;
+    }
+    &__text{
+        text-align: center;
+    }
+}
+.brands__img li:not(:last-child) {
+    margin-right: 30px;
+}
+.contact{
+    &__info-street-text {
+        margin-top: 32px;
+    }
+    &__info-street-text li {
+        font-weight: 500;
+        left: -40px;
+        margin-bottom: 20px;
+        position: relative;
+        list-style: none;
+    }
+    &__mail p {
+        color: rgb(39, 138, 255);
+        text-decoration: underline;
+    }
+    &__social {
+        margin-top: 32px;
+    }
+    &__social-text {
+        font-size: 12px;
+    }
+    &__social-button-all {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        margin-top: 12px;
+        padding: 0;
+    }
+}
+.contact__social-button-all li:not(:last-child) {
+    margin-right: 24px;
+}
+.form {
+    background-color: #FFFFFF;
+    height: 406px;
+    margin-bottom: 40px;
+    width: 445px;
+    border-radius: 8px;
+    margin-left: 36px;
+    margin-top: 40px;
+    &__title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        margin-left: 36px;
+    }
+    &__action, &__subtitle {
+        margin-left: 36px;
+    }
+    &__subtitle {
+        font-size: 14px;
+        margin-bottom: 35px;
+        margin-right: 36px;
+    }
+    &__button, &__name, &__phone {
+        font-size: 14px;
+        height: 44px;
+        width: 375px;
+    }
+    &__name, &__phone {
+        color: #A0A0A0;
+        margin-bottom: 20px;
+        padding-left: 16px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #D8D8D8;
+        border-image: initial;
+    }
+    &__politic {
+        font-size: 12px;
+        margin-top: 16px;
+    }
+    &__politic-text {
+        color: #278AFF;
+        text-decoration: underline;
     }
 }

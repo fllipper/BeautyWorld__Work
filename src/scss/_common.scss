@@ -8,6 +8,7 @@ html {
 }
 body{
   font: 16px 'Montserrat', sans-serif;
+/*  min-width: 1170px;*/
 }
 html,body, .wrapper{
   height: 100%;
@@ -30,7 +31,7 @@ h1, p{
 header{
   background-image: url("../img/fone.png");
 }
-footer, header, main , {
+footer, header, main{
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
